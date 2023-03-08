@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  crawler:
+    image: "${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME}"
+    build:
+      context: .
+    environment:
+      - MIDDLEWARE_SECRET_KEY
+      - MIDDLEWARE_URL
+      - TZ=Asia/Tehran
